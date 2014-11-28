@@ -12,3 +12,8 @@
 | `vagrant status` 		| Geeft alle VM's weer die aanstaan
 | `vagrant ssh <naam amchine>`			| Maakt een ssh verbinding met een bepaalde VM
 
+## Algemene Vagrant instellingen
+| Task 					| Command
+| :---                  | :---
+| `Vagrant box add <naam die je aan de box wilt geven> --name <path waar je box staat>` | Die voegt een box toe zodat je dze kan gebruiken
+| `vagrant init <naam van de box>`| Dit initialliseert de vagrant box
