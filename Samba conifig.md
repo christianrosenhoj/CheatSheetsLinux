@@ -38,11 +38,10 @@
 | `/etc/samba/smb.conf`			| Samba
 | `/etc/vsftpd/vsftpd.conf`		| FTP
 
-### Firewall en DNS ###
-* `lsof -i -n -P | grep` ... ( list open files, geeft lijst geopende bestanden en door welke processen deze gebruikt worden, weer)
+### Firewall ###
 * Firewall: /etc/sysconfig/iptables
     * systemctl restart iptables.service
-* DNS: /etc/resolv.conf
+* 
 
 ### Services controleren ###
 Indien deze uitstaan, aanzetten.
