@@ -41,7 +41,11 @@
 ### Firewall ###
 * Firewall: /etc/sysconfig/iptables
     * systemctl restart iptables.service
-* 
+| Action							| Function
+| :---                                    | :---                                       |
+| Currently enabled features       | `firewall-cmd --list-all-zones`                                  |
+| Enable a port in zone            | `firewall-cmd [--permanent] [--zone=ZONE] --add-port=80/tcp`     |
+
 
 ### Services controleren ###
 Indien deze uitstaan, aanzetten.
