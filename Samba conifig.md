@@ -32,7 +32,7 @@
 * ls -Z
 * netstat -Z
 
-###Nodige config files###
+###Nuttige config files###
 | Path							| Function
 | :---							| :---
 | `/etc/samba/smb.conf`			| Samba
@@ -49,6 +49,3 @@ Indien deze uitstaan, aanzetten.
 * SAMBA: 
     * systemctl status smb.service (daemon)
     * systemctl status nmb.service (daemon)
-* FTP: 
-    * systemctl status vsftpd.service
-*  `journalctl  -r -o verbose -u smb.service`
