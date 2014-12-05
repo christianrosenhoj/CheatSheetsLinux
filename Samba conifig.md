@@ -32,13 +32,11 @@
 * ls -Z
 * netstat -Z
 
-###Testen ###
-
-Wanneer een script niet runt in combinatie met een Windows-host (door einde-markeringen, eigen aan Microsoft):
-
-`yum install dos2unix -f`.
-
-Run vervolgens `dos2unix [script]`.
+###Nodige config files###
+| Path							| Function
+| :---							| :---
+| `/etc/samba/smb.conf`			| Samba
+| `/etc/vsftpd/vsftpd.conf`		| FTP
 
 ### Firewall en DNS ###
 * `lsof -i -n -P | grep` ... ( list open files, geeft lijst geopende bestanden en door welke processen deze gebruikt worden, weer)
@@ -47,15 +45,10 @@ Run vervolgens `dos2unix [script]`.
 * DNS: /etc/resolv.conf
 
 ### Services controleren ###
-
+Indien deze uitstaan, aanzetten.
 * SAMBA: 
     * systemctl status smb.service (daemon)
     * systemctl status nmb.service (daemon)
 * FTP: 
     * systemctl status vsftpd.service
 *  `journalctl  -r -o verbose -u smb.service`
-*  `journalctl  -r -o verbose -u nmb.service`
-* `ps | grep` [naam_service]
-* `tail -f less /var/logs/messages`
-      * (en verdere logs in de directory logs)
-      * zoek dan naar DHCP op deze manier: /DHCP
