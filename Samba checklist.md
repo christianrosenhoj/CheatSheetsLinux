@@ -1,50 +1,11 @@
-### Samba_troubleshooting_checklist
+## Checklist
 
-0) Hardware check (kabels!)
-
-1) Services controleren
-
-* SAMBA: 
-    * systemctl status smb.service (daemon)
-    * systemctl status nmb.service (daemon)
-* FTP: 
-    * systemctl status vsftpd.service
-
-2) Logs controleren
-
-*	journalctl -r -o verbose -u smb.service 
-*	journalctl -r -o verbose -u nmb.service
-*  journalctl –f (aparte terminal )
-*  /var/log/samba*
-
-3) Samba config-file controleren
-
-`testparm smb.conf`
-
-4) Check DNS: is deze actief en werkt deze correct?
-
-`cat /etc/resolv.conf`
-
-5) SELinux-instellingen controleren
-
-Zie cheatsheet en
-- `ausearch -m avc -ts recent -i`
-- `grep setroubleshoot /var/log/messages`
-
-6) Firewall controleren
-
-`iptables -L -v` / `firewalld-cmd –list-all`  /  `ss -tulpn`
-
-7) Shares controleren
-
-`smbclient -L [naam server]`
-
-8) Zoek het IP-adres van de Samba-server
-
-`nmblookup -B [naamServer] __SAMBA__`
-
-Wanneer niet weergegeven, controleer `inetd.conf`-file.
-
-9) Zoek het IP-adres van de master browser van de werkgroep
-
-`nmblookup -M [naamWerkgroep]`
+| Check		| Task
+| :--		| :--
+|			| Check Hardware (or Virtualbox-settings) 
+|			| IP configuration
+|			| Services (nmb, smb) are running
+|			| Firewall is configured 
+|			| Users are created
+|			| Samba configuration file is correct
+|			| SELinux is configured (booleans: samba_enable_home_dirs, samba_export_all_rw)
